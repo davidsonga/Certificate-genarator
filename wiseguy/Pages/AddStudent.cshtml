@@ -1,0 +1,67 @@
+﻿@page
+@model wiseguy.Pages.AddStudentModel
+@{
+}
+ 
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Convert | Export html Table to CSV & EXCEL File</title>
+    <link rel="stylesheet" type="text/css" href="~/css/EditMachine.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <form method="post">
+            <div class="input-container">
+            <label for="machineName"> Student Full Name:</label>
+                <input type="text" asp-for="FullName" placeholder="Student Full Name">
+            </div>
+            <div class="input-container">
+            <label for="machineName"> Student ID:</label>
+                <input type="text" asp-for="StudentID" placeholder="Student ID">
+            </div>
+
+            <div class="input-container">
+            <label for="machineName"> Course:</label>
+                <input type="text" asp-for="Course" placeholder="Course">
+            </div>
+            <div class="input-container">
+            <label for="machineName"> Completed Date:</label>
+                <input type="date" asp-for="CompletedDate" placeholder="Completed Date">
+            </div>
+
+        <div class="input-container">
+            <label for="machineName">Certificate NO:</label>
+                <input type="text" asp-for="CertificateNo" placeholder="Certificate NO">
+        </div>
+
+                <button type="submit" class="button"  >Submit</button>
+                <button type="button" class="button button-back" onclick="location.href='EmployeeMenu'">Back</button>
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["SuccessMessage"]
+                    </div>
+                }
+
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger">
+                        @TempData["ErrorMessage"]
+                    </div>
+                }
+        </form>
+
+      
+     
+    
+    </div>
+
+</body>
+</html>
+

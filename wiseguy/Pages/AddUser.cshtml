@@ -1,0 +1,74 @@
+﻿@page
+@model wiseguy.Pages.AddUserModel
+@{
+}
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Convert | Export html Table to CSV & EXCEL File</title>
+    <link rel="stylesheet" type="text/css" href="~/css/EditMachine.css">
+</head>
+<body>
+    <div class="form-container">
+       
+
+
+
+        <form method="post">
+
+            <div class="select-container">
+                <label>Select Role: 1 = Admin or any number == Employee </label>
+                <select id="machineId" asp-for="role">
+                    <option asp-for="role" value="Admin">Admin</option>
+                    <option asp-for="role" value="User">User</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <label for="machineName"> Email-Address:</label>
+                <input type="text" asp-for="email" placeholder="Email-Address">
+            </div>
+            <div class="input-container">
+                <label for="machineName"> Name:</label>
+                <input type="text" asp-for="name" placeholder="Name">
+            </div>
+
+            <div class="input-container">
+                <label for="machineName"> Surname:</label>
+                <input type="text" asp-for="surname" placeholder="Surname">
+            </div>
+            <div class="input-container">
+                <label for="machineName"> Password:</label>
+                <input type="password" asp-for="password" placeholder="password">
+            </div>
+
+                <button type="submit" class="button"  >Submit</button>
+            <button type="button" class="button button-back" onclick="location.href='AdminMenu'">Back</button>
+
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["SuccessMessage"]
+                    </div>
+                }
+
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger">
+                        @TempData["ErrorMessage"]
+                    </div>
+                }
+        </form>
+
+      
+     
+    
+    </div>
+
+</body>
+</html>
+

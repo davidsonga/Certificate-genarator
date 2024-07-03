@@ -1,0 +1,55 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* Style the navigation bar */
+.navbar {
+    background-color: red; /* Set background color to green */
+    width: 400%; /* Set width to match the parent element */
+    overflow: hidden;
+}
+
+/* Navigation links style */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-left: 0; /* Reset padding */
+    align-items: center; /* Align items vertically in the center */
+    width: 100%; /* Ensure the ul covers the full width of the navbar */
+}
+
+    .nav-links li {
+        padding: 14px 20px; /* Add padding to each li */
+    }
+
+        .nav-links li a {
+            color: white;
+            transition: background 0.3s;
+        }
+
+            /* Change the color of links on hover */
+            .nav-links li a:hover {
+                background-color: #00ff00; /* Slightly lighter green on hover */
+                color: black;
+            }
+
+/* Responsive navigation bar */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+        .nav-links li a {
+            padding: 10px;
+            text-align: left; /* Align text to the left on small screens */
+        }
+}
+
+.active {
+    background-color: darkgreen; /* Set the background color to blue */
+}

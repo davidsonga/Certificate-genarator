@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('pic.jpg'); /* Make sure this path is correct */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Optional: Fix the background image during scroll */
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* This creates the space between the cards */
+}
+
+.card {
+    width: 300px; /* Increased width */
+    height: 400px; /* Increased height */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover; /* Ensure the background covers the card */
+    background-position: center; /* Center the background image */
+}
+
+#card1 {
+    background-image: url('images/school.jpg'); /* Updated path for card 1 */
+}
+
+#card2 {
+    background-image: url('images/parent.jpg'); /* Updated path for card 2 */
+}
+
+
+.card .content {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for content */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+    .card:hover .content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+.btn {
+    background-color: green; /* Changed color to green */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: center; /* Center the button horizontally */
+    margin-top: auto; /* Push the button to the bottom */
+}
+
+    .btn:hover {
+        background-color: #0056b3;
+        transform: scale(1.1);
+    }
+
+.link, .btn-secondary, .btn-google {
+    display: block;
+    width: fit-content;
+    margin: 10px auto; /* Center the link and buttons horizontally */
+    text-decoration: none;
+    color: inherit;
+}
+
+.link {
+    color: #0000EE; /* Standard link color */
+    margin-bottom: 20px;
+}
+
+.btn-secondary, .btn-google {
+    background-color: rosybrown;
+    color: white;
+    border: 1px solid #ced4da;
+    margin-bottom: 10px; /* Spacing between buttons */
+}
+
+
+
+    .btn-secondary:hover, .btn-google:hover {
+        opacity: 0.8;
+    }

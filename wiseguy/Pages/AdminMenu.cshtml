@@ -1,0 +1,129 @@
+﻿@page
+@model wiseguy.Pages.AdminMenuModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Convert | Export html Table to CSV & EXCEL File</title>
+    <link rel="stylesheet" type="text/css" href="~/css/PrincipalMenu.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <link rel="stylesheet" type="text/css" href="~/css/nav.css">
+        <ul class="nav-links">
+            <li class="active">Home </li>
+            <li><a href="AdminUser">Employee details</a></li>
+            <li><a href="Index">Log-out</a></li>
+           
+
+        </ul>
+    </nav>
+    <main class="table" id="customers_table">
+        <section class="table__header">
+            <h1>HOME</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                 
+            </div>
+            <div class="export__file">
+                 
+            </div>
+        </section>
+        <form method="post">
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Student Full Name</th>
+                        <th> Student ID</th>
+                        <th> Course</th>
+                        <th> Completed Date</th>
+                        <th> Certificate NO</th>
+                        <th> Date Uploaded</th>
+                        <th> Submitter</th>
+                      
+                        <th> Action Accept</th>
+
+                    </tr>
+
+
+                    @if (Model.DisplayDetails)
+                    {
+
+                            <tr>
+                                <td> </td>
+                                <td> </td>
+                                <td> </td>
+                                <td> </td>
+                                <td> </td>
+                                <td> </td>
+                                <td> </td>
+                                <td><a href="AddUser">ADD Employee</a> <br />   </td>
+                            </tr>
+                        foreach (var element in Model.list)
+                        {
+                            <tr>
+                                <td>@element.FullName</td>
+                                <td>@element.StudentID</td>
+                                <td>@element.Course</td>
+                                <td>@element.CompletedDate</td>
+                                <td>@element.CertificateNo</td>
+                                <td>@element.Date</td>
+                                <td>Daniel</td>
+                                @if (element.Status == "1")
+                                {
+                                   
+
+                                    <td>
+                                        <a  >Approved</a> <br />
+
+
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+
+                                            <button class="link-btn-edit" name="sysID" value="@element.VerifyID" href="AdminMenu">Accept</button>
+                                            
+
+                                            
+
+
+
+                                        </td>
+                                    }
+                                  
+                            </tr>
+                        }
+                    }
+                </thead>
+                <tbody>
+
+                  
+                        
+                          
+                               
+                     
+ 
+                </tbody>
+            </table>
+        </section>
+        </form>
+    </main>
+     
+
+    <script src="~/js/script.js"></script>
+   
+</body>
+
+</html>
